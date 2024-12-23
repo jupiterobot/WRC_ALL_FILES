@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- Launch Gazebo  -->
+    <include file="$(find jupiterobot2_arm_description)/launch/jupiter2_gazebo_world.launch" />
+
+    <!-- ros_control arm launch file -->
+    <include file="$(find jupiterobot2_arm_description)/launch/jupiter2_gazebo_states.launch" />
+ 
+    <!-- ros_control trajectory control dof arm launch file -->
+    <include file="$(find jupiterobot2_arm_description)/launch/jupiter2_trajectory_controller.launch" />
+
+    <!-- moveit launch file -->
+    <!-- <include file="$(find jupiterobot2_moveit_config)/launch/moveit_planning_execution.launch" /> -->
+
+</launch>

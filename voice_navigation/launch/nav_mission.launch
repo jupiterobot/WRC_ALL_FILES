@@ -1,0 +1,13 @@
+<launch>
+    <!-- <include file="$(find jupiterobot2_bringup)/launch/jupiterobot2_bringup.launch"/> -->
+    <!--include file="$(find voice_navigation)/launch/amcl_task.launch"-->
+    <!-- <include file="$(find jupiterobot2_navigation)/launch/jupiterobot2_navigation.launch">
+        <arg name="map_file" default="/home/mustar/catkin_ws/maps/office_test.yaml"/>
+    </include> -->
+    <include file="$(find jupiterobot2_voice_ps)/launch/voice_recognition.launch">
+        <arg name="dic" value="$(find voice_navigation)/speech/voice.dic"/>
+        <arg name="lm" value="$(find voice_navigation)/speech/voice.lm"/>
+    </include>
+    <!-- <node name="navi_node" pkg="voice_navigation" type="navigation_node.py"/> -->
+    <node name="soundplay" pkg="sound_play" type="soundplay_node.py"/>
+</launch>

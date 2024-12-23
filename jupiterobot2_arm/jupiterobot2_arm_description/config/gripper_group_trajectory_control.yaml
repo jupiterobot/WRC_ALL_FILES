@@ -1,0 +1,10 @@
+jupiter2:
+  gripper_joint_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+      - gripper_joint
+
+    gains:
+      gripper_joint:  {p: 50.0, d: 1.0, i: 0.01, i_clamp: 1.0}
+
+

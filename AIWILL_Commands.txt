@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------------------------------------------------------
+task1:
+
+roslaunch jupiterobot2_bringup task1_bringup.launch
+roslaunch jupiterobot2_navigation jupiterobot2_navigation.launch map_file:=/home/mustar/catkin_ws/maps/AIWILL_task.pgm.yaml
+roslaunch voice_navigation nav_mission.launch
+python task1.py
+
+
+--------------------------------------------------------------------------------------------------------------------------
+task2:
+
+roslaunch jupiterobot2_bringup task2_bringup.launch
+
+roslaunch jupiterobot2_navigation jupiterobot2_navigation2.launch map_file:=/home/mustar/catkin_ws/maps/AIWILL_task.pgm.yaml
+
+roslaunch voice_navigation nav_mission.launch
+
+python task2.py
+
+
+---------------------------------------------------------------------------------------------------------------------------
+task3:
+
+roslaunch jupiterobot2_teleop joystick_teleop.launch
