@@ -1,0 +1,24 @@
+
+<launch>
+
+  <!-- execute the trajectory in 'interpolate' mode or jump to goal position in 'last point' mode -->
+  <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+
+  <!-- Set the param that trajectory_execution_manager needs to find the controller plugin -->
+  <!-- <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/> -->
+
+  <!-- The rest of the params are specific to this plugin -->
+  <!-- <rosparam file="$(find jupiterobot2_moveit_config)/config/gazebo_controllers.yaml"/> -->
+
+
+
+  <!-- Load controller list to the parameter server -->
+  <!--不进行rviz和gazebo联合仿真时，使用下面的命令-->
+    <!--<rosparam file="$(find jupiterobot2_moveit_config)/config/simple_moveit_controllers.yaml" />-->
+	<!--在进行rviz和gazebo联合仿真时，使用下面的命令-->
+  <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+  <rosparam file="$(find jupiterobot2_moveit_config)/config/controllers_gazebo.yaml" />
+
+
+
+</launch>

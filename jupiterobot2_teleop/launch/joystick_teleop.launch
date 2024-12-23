@@ -1,0 +1,11 @@
+<!--
+  Driver for the logitech joystick.
+  Use the D pad while pressing and holding the left trigger button (5) to control.
+-->
+<launch>
+  <node name="joy_controller" pkg="jupiterobot2_teleop" type="joy_control.py" output="screen">
+  </node>
+  <node pkg="joy" type="joy_node" name="joystick">
+    <param name="dev" type="string" value="/dev/input/js0"/>
+  </node>
+</launch>
